@@ -1,0 +1,6 @@
+[
+  {"id":"order-001","customer":"Lina","phone":"+213661234567","product":"Orthopedic Walking Shoes","wilaya":"Alger","commune":"Bab Ezzouar","status":"New","created_at":"2026-05-23T08:32:00.000Z"},
+  {"id":"order-002","customer":"Amir","phone":"+213551234567","product":"Diabetic Support Shoes","wilaya":"Oran","commune":"Es Senia","status":"Confirmed","created_at":"2026-05-22T11:17:00.000Z"},
+  {"id":"order-003","customer":"Sara","phone":"+213661234568","product":"Comfort Sandals","wilaya":"Constantine","commune":"Constantine","status":"Shipped","created_at":"2026-05-21T14:55:00.000Z"},
+  {"id":"order-004","customer":"Nabil","phone":"+213661234569","product":"Orthopedic Insoles","wilaya":"Sétif","commune":"Sétif","status":"Delivered","created_at":"2026-05-20T09:10:00.000Z"}
+]

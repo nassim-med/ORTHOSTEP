@@ -1,0 +1,146 @@
+[
+  {
+    "id": "walking-shoes",
+    "title": "Orthopedic Walking Shoes",
+    "category": "Chaussures",
+    "price": 12990,
+    "oldPrice": 15990,
+    "discount": 19,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Beige", "Blanc", "Vert"],
+    "comfortLevel": "Support élevé",
+    "recommendedUse": "Marche quotidienne et confort plantaire",
+    "description": "Chaussures orthopédiques légères offrant un soutien structuré, un amorti dynamique et une silhouette raffinée.",
+    "images": [
+      "https://images.unsplash.com/photo-1519741492265-60d2dedcf5f9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1528701800489-20d0d0c32d20?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80"
+    ]
+  },
+  {
+    "id": "medical-sneakers",
+    "title": "Medical Comfort Sneakers",
+    "category": "Chaussures",
+    "price": 14290,
+    "oldPrice": 17990,
+    "discount": 21,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Gris", "Blanc", "Bleu"],
+    "comfortLevel": "Ultra doux",
+    "recommendedUse": "Soutien médical et marche active",
+    "description": "Baskets orthopédiques respirantes avec stabilisation arrière et semelle adaptative pour un confort prolongé.",
+    "images": [
+      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519741492265-60d2dedcf5f9?auto=format&fit=crop&w=1000&q=80"
+    ]
+  },
+  {
+    "id": "diabetic-shoes",
+    "title": "Diabetic Support Shoes",
+    "category": "Chaussures",
+    "price": 11990,
+    "oldPrice": 14990,
+    "discount": 20,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Blanc", "Noir", "Taupe"],
+    "comfortLevel": "Protection maximale",
+    "recommendedUse": "Soins du pied diabétique",
+    "description": "Chaussures protectrices avec semelle large et doublure douce, idéales pour les pieds sensibles.",
+    "images": [
+      "https://images.unsplash.com/photo-1528701800489-20d0d0c32d20?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519741492265-60d2dedcf5f9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80"
+    ]
+  },
+  {
+    "id": "relief-shoes",
+    "title": "Foot Pain Relief Shoes",
+    "category": "Chaussures",
+    "price": 12590,
+    "oldPrice": 15590,
+    "discount": 19,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Vert", "Blanc", "Bleu"],
+    "comfortLevel": "Amorti renforcé",
+    "recommendedUse": "Soulagement du talon et de l’avant-pied",
+    "description": "Modèle conçu pour absorber les chocs et offrir un soutien plantaire continu toute la journée.",
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519741492265-60d2dedcf5f9?auto=format&fit=crop&w=1000&q=80"
+    ]
+  },
+  {
+    "id": "orthopedic-insoles",
+    "title": "Orthopedic Insoles",
+    "category": "Semelles",
+    "price": 4990,
+    "oldPrice": 6490,
+    "discount": 23,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Gris", "Beige"],
+    "comfortLevel": "Support ciblé",
+    "recommendedUse": "Amélioration de l’alignement du pied",
+    "description": "Semelles orthopédiques sur mesure qui corrigent la posture et réduisent la fatigue.",
+    "images": [
+      "https://images.unsplash.com/photo-1519741492265-60d2dedcf5f9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1528701800489-20d0d0c32d20?auto=format&fit=crop&w=1000&q=80"
+    ]
+  },
+  {
+    "id": "comfort-sandals",
+    "title": "Comfort Sandals",
+    "category": "Sandales",
+    "price": 10490,
+    "oldPrice": 12990,
+    "discount": 19,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Blanc", "Marron"],
+    "comfortLevel": "Respirabilité premium",
+    "recommendedUse": "Promenades d’été et récupération active",
+    "description": "Sandales orthopédiques légères avec support de voûte et coussin de talon intégré.",
+    "images": [
+      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1528701800489-20d0d0c32d20?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80"
+    ]
+  },
+  {
+    "id": "support-slippers",
+    "title": "Support Slippers",
+    "category": "Mules",
+    "price": 9390,
+    "oldPrice": 11990,
+    "discount": 22,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Gris", "Blanc"],
+    "comfortLevel": "Douceur constante",
+    "recommendedUse": "Repos et confort intérieur",
+    "description": "Mules orthopédiques parfaites pour la maison, conçues pour maintenir la posture même au repos.",
+    "images": [
+      "https://images.unsplash.com/photo-1519741492265-60d2dedcf5f9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1528701800489-20d0d0c32d20?auto=format&fit=crop&w=1000&q=80"
+    ]
+  },
+  {
+    "id": "posture-trainers",
+    "title": "Posture Trainer Shoes",
+    "category": "Chaussures",
+    "price": 13490,
+    "oldPrice": 16990,
+    "discount": 20,
+    "sizes": [38, 39, 40, 41, 42, 43],
+    "colors": ["Noir", "Vert"],
+    "comfortLevel": "Stabilité avancée",
+    "recommendedUse": "Correction de posture et marche prolongée",
+    "description": "Chaussures haut de gamme pour un soutien postural optimal et une démarche plus stable.",
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519741492265-60d2dedcf5f9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1000&q=80"
+    ]
+  }
+]

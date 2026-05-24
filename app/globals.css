@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Inter", sans-serif;
+  background-color: #fafaf8;
+  color: #111827;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #f8faf7;
+  color: #111827;
+  overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #c3f1d6;
+  color: #0f4f2e;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root,
+body {
+  margin: 0;
+}
+
+.section-container {
+  width: min(1400px, 100% - 2rem);
+  margin: 0 auto;
+}
+
+.bg-soft {
+  background: #f3f7f4;
+}
+
+.card-glow {
+  box-shadow: 0 14px 45px rgba(15, 47, 46, 0.08);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

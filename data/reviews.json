@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Sofia",
+    "location": "Alger",
+    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    "rating": 5,
+    "text": "Mon mal de pied a disparu après seulement quelques jours. Les chaussures sont incroyablement confortables."
+  },
+  {
+    "name": "Rachid",
+    "location": "Oran",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    "rating": 5,
+    "text": "Livraison rapide et un vrai soutien pour mes promenades. Je recommande ORTHOSTEP."
+  },
+  {
+    "name": "Yasmine",
+    "location": "Constantine",
+    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+    "rating": 5,
+    "text": "Très confortable et excellent maintien. J’aime le design médical haut de gamme."
+  }
+]
