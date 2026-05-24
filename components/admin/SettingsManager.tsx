@@ -97,7 +97,7 @@ export default function SettingsManager({
       const {error} =
       await supabaseBrowser
       .storage
-      .from("branding")
+      .from("nassim")
       .upload(
         fileName,
         file
