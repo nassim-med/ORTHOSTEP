@@ -1,23 +1,49 @@
 "use client";
 
-import Image from "next/image";
-import useStoreSettings from "../lib/use-store-settings";
+interface StoreLogoProps{
+  logo?:string;
+  storeName?:string;
+}
 
-export default function StoreLogo() {
-  const settings = useStoreSettings();
+export default function StoreLogo({
+  logo,
+  storeName
+}:StoreLogoProps){
 
-  return (
-    <div className="flex items-center justify-center">
-      {settings?.logo ? (
-        <Image
-          src={settings.logo}
-          alt="ORTHOSTEP"
-          width={220}
-          height={90}
-          priority
-          className="h-14 w-auto object-contain sm:h-16 md:h-20"
-        />
-      ) : null}
-    </div>
-  );
+return(
+
+<div className="flex justify-center">
+
+{logo ? (
+
+<img
+src={logo}
+alt="logo"
+className="
+max-h-[110px]
+w-auto
+object-contain
+"
+/>
+
+) : (
+
+<h1
+className="
+text-3xl
+font-bold
+text-slate-900
+"
+>
+
+{storeName || "ORTHOSTEP"}
+
+</h1>
+
+)}
+
+</div>
+
+);
+
 }

@@ -82,8 +82,13 @@ export default function HomePage() {
   />
 
   <div className="flex justify-center bg-white -mt-2 mb-4">
-    <StoreLogo />
-  </div>
+
+  <StoreLogo
+    logo={settings.logo}
+    storeName={settings.store_name}
+  />
+
+</div>
 
   <div
     ref={orderFormRef}
