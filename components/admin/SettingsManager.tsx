@@ -109,7 +109,7 @@ export default function SettingsManager({
       const {data} =
       supabaseBrowser
       .storage
-      .from("branding")
+      .from("nassim")
       .getPublicUrl(
         fileName
       );
