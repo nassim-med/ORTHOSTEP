@@ -20,61 +20,49 @@ interface SettingsManagerProps {
   initial: StoreSettings;
 }
 
-const tabs: {
-  key: TabKey;
-  label: string;
-}[] = [
-  {
-    key: "general",
-    label: "General"
-  },
-  {
-    key: "social",
-    label: "Social"
-  },
-  {
-    key: "contact",
-    label: "Contact"
-  },
-  {
-    key: "branding",
-    label: "Branding"
-  }
-];
+const tabs = [
+  { key: "general", label: "General" },
+  { key: "social", label: "Social" },
+  { key: "contact", label: "Contact" },
+  { key: "branding", label: "Branding" }
+] as const;
 
 export default function SettingsManager({
   initial
 }: SettingsManagerProps) {
 
   const [activeTab,setActiveTab] =
-    useState<TabKey>("general");
+  useState<TabKey>("general");
 
   const [formState,setFormState] =
-    useState<StoreSettings>({
-      ...defaultStoreSettings,
-      ...initial
-    });
+  useState<StoreSettings>({
+    ...defaultStoreSettings,
+    ...initial
+  });
 
   const [saving,setSaving] =
-    useState(false);
+  useState(false);
 
   const [uploading,setUploading] =
-    useState(false);
+  useState(false);
 
   const [toast,setToast] =
-    useState("");
+  useState("");
 
   const updateField = <
-    K extends keyof StoreSettings
+  K extends keyof StoreSettings
   >(
     key:K,
     value:StoreSettings[K]
   )=>{
+
     setFormState(prev=>({
       ...prev,
       [key]:value
     }));
+
   };
+
 
   async function handleLogoUpload(
     e:React.ChangeEvent<HTMLInputElement>
@@ -83,16 +71,14 @@ export default function SettingsManager({
     try{
 
       const file =
-        e.target.files?.[0];
+      e.target.files?.[0];
 
       if(!file) return;
 
       setUploading(true);
 
       const fileName =
-        Date.now()
-        + "-"
-        + file.name;
+      `${Date.now()}-${file.name}`;
 
       const {error} =
       await supabaseBrowser
@@ -100,13 +86,18 @@ export default function SettingsManager({
       .from("nassim")
       .upload(
         fileName,
-        file
+        file,
+        {
+          upsert:true
+        }
       );
 
-      if(error)
+      if(error){
+        console.log(error);
         throw error;
+      }
 
-      const {data} =
+      const {data}=
       supabaseBrowser
       .storage
       .from("nassim")
@@ -114,20 +105,51 @@ export default function SettingsManager({
         fileName
       );
 
+      const logoUrl =
+      data.publicUrl;
+
+      const newState = {
+        ...formState,
+        logo:logoUrl
+      };
+
       setFormState(
-        prev=>({
-          ...prev,
-          logo:
-          data.publicUrl
-        })
+        newState
       );
 
+      /* حفظ مباشر */
+
+      await fetch(
+      "/api/admin/settings",
+      {
+        method:"PUT",
+        headers:{
+          "Content-Type":
+          "application/json"
+        },
+        body:JSON.stringify(
+          newState
+        )
+      });
+
+      /* تحديث كل الموقع */
+
+      window.localStorage.setItem(
+      SETTINGS_STORAGE_KEY,
+      String(Date.now())
+      );
+
+      window.dispatchEvent(
+      new Event(
+      SETTINGS_EVENT
+      ));
+
       setToast(
-        "Logo uploaded successfully"
+      "Logo uploaded successfully"
       );
 
       setTimeout(()=>{
-        setToast("");
+      setToast("");
       },2500);
 
     }catch(error){
@@ -135,7 +157,7 @@ export default function SettingsManager({
       console.log(error);
 
       setToast(
-        "Upload failed"
+      "Upload failed"
       );
 
     }finally{
@@ -143,6 +165,7 @@ export default function SettingsManager({
       setUploading(false);
 
     }
+
   }
 
   async function saveSettings(
@@ -156,73 +179,75 @@ export default function SettingsManager({
     const payload={
       ...formState,
 
-      facebook:safeUrl(
-        formState.facebook
+      facebook:
+      safeUrl(
+      formState.facebook
       ),
 
-      instagram:safeUrl(
-        formState.instagram
+      instagram:
+      safeUrl(
+      formState.instagram
       ),
 
-      tiktok:safeUrl(
-        formState.tiktok
+      tiktok:
+      safeUrl(
+      formState.tiktok
       ),
 
-      telegram:safeUrl(
-        formState.telegram
+      telegram:
+      safeUrl(
+      formState.telegram
       )
     };
 
     const response=
     await fetch(
-      "/api/admin/settings",
-      {
-        method:"PUT",
+    "/api/admin/settings",
+    {
+      method:"PUT",
 
-        headers:{
-          "Content-Type":
-          "application/json"
-        },
+      headers:{
+        "Content-Type":
+        "application/json"
+      },
 
-        body:
-        JSON.stringify(
-          payload
-        )
-      }
-    );
+      body:
+      JSON.stringify(
+      payload
+      )
+    });
 
     setSaving(false);
 
     if(!response.ok)
-      return;
+    return;
 
     const data=
     await response.json();
 
     setFormState(
-      prev=>({
-        ...prev,
-        ...data
-      })
+    prev=>({
+      ...prev,
+      ...data
+    })
     );
 
     window.localStorage.setItem(
-      SETTINGS_STORAGE_KEY,
-      String(Date.now())
+    SETTINGS_STORAGE_KEY,
+    String(Date.now())
     );
 
     window.dispatchEvent(
-      new Event(
-        SETTINGS_EVENT
-      )
-    );
+    new Event(
+    SETTINGS_EVENT
+    ));
 
     setToast(
-      "Settings updated"
+    "Settings updated"
     );
 
     setTimeout(()=>{
-      setToast("");
+    setToast("");
     },2600);
 
   }
@@ -239,8 +264,7 @@ border-slate-200
 bg-white
 p-6
 shadow-soft
-"
->
+">
 
 <div className="flex flex-wrap gap-2">
 
@@ -249,7 +273,10 @@ shadow-soft
 <button
 key={tab.key}
 type="button"
-onClick={()=>setActiveTab(tab.key)}
+onClick={()=>
+setActiveTab(
+tab.key
+)}
 className={`rounded-full px-4 py-2 text-sm font-semibold ${
 activeTab===tab.key
 ?
@@ -267,13 +294,12 @@ activeTab===tab.key
 
 </div>
 
+
 {activeTab==="branding" && (
 
 <div className="space-y-5">
 
-<div>
-
-<p className="font-semibold mb-3">
+<p className="font-semibold">
 Store Logo
 </p>
 
@@ -303,9 +329,10 @@ object-contain
 <input
 type="file"
 accept="image/*"
-onChange={handleLogoUpload}
+onChange={
+handleLogoUpload
+}
 className="
-mt-4
 w-full
 rounded-2xl
 border
@@ -314,14 +341,10 @@ p-3
 />
 
 {uploading && (
-
-<p className="mt-3">
+<p>
 Uploading...
 </p>
-
 )}
-
-</div>
 
 </div>
 
@@ -342,8 +365,7 @@ bg-orthostep
 px-6
 py-3
 text-white
-"
->
+">
 
 {saving
 ?
