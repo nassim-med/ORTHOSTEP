@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Hero from "../components/Hero";
 import ProductSelector from "../components/ProductSelector";
 import OrderForm from "../components/OrderForm";
+import StoreLogo from "../components/StoreLogo";
 import StickyBar from "../components/StickyBar";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import MinimalFooter from "../components/MinimalFooter";
@@ -73,13 +74,21 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen bg-white" dir={isArabic ? "rtl" : "ltr"}>
-      <Hero language={language} onOrderClick={handleOrderClick} onLanguageChange={setLanguage} />
+  <main className="min-h-screen bg-white" dir={isArabic ? "rtl" : "ltr"}>
+  <Hero
+    language={language}
+    onOrderClick={handleOrderClick}
+    onLanguageChange={setLanguage}
+  />
 
-      <div
-        ref={orderFormRef}
-        className="bg-white px-4 py-6 sm:py-10"
-      >
+  <div className="flex justify-center bg-white -mt-2 mb-4">
+    <StoreLogo />
+  </div>
+
+  <div
+    ref={orderFormRef}
+    className="bg-white px-4 py-6 sm:py-10"
+  >
         <div className="section-container">
           <ProductSelector
             language={language}
