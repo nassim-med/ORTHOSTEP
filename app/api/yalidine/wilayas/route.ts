@@ -1,29 +1,44 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  try {
 
-    const response = await fetch(
-      "https://api.yalidine.com/v1/wilayas",
-      {
-        headers:{
-          "X-ID":process.env.YALIDINE_API_ID!,
-          "X-TOKEN":process.env.YALIDINE_API_TOKEN!
-        }
-      }
-    );
+try{
 
-    const data =
-    await response.json();
+const response=
+await fetch(
+"https://api.yalidine.com/v1/wilayas",
+{
+headers:{
+Authorization:
+process.env.YALIDINE_API!
+}
+}
+);
 
-    return NextResponse.json(data);
+const data=
+await response.json();
 
-  } catch {
+console.log(
+"WILAYAS:",
+data
+);
 
-    return NextResponse.json(
-      {error:"failed"},
-      {status:500}
-    );
+return NextResponse.json(
+data
+);
 
-  }
+}catch(error){
+
+console.log(
+error
+);
+
+return NextResponse.json(
+{
+data:[]
+}
+)
+
+}
+
 }
